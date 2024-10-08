@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderTasks() {
+        // Ordena as tarefas por data e hora
+        tasks.sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
+
         taskList.innerHTML = '';
         const now = new Date();
         tasks.forEach((task, index) => {
